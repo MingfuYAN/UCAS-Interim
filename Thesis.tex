@@ -1,0 +1,118 @@
+%---------------------------------------------------------------------------%
+%-                                                                         -%
+%-                           LaTeX Template                                -%
+%-                                                                         -%
+%---------------------------------------------------------------------------%
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com> 
+%- This is free software: you can redistribute it and/or modify it
+%- under the terms of the GNU General Public License as published by
+%- the Free Software Foundation, either version 3 of the License, or
+%- (at your option) any later version.
+%---------------------------------------------------------------------------%
+%->> Document class declaration
+%---------------------------------------------------------------------------%
+\documentclass[twoside]{Style/ucasproposal}%
+%- Multiple optional arguments:
+%- [<oneside|twoside|print>]% oneside eprint, twoside eprint, or paper print
+%- [fontset=<adobe|none|...>]% specify font set instead of automatic detection
+%- [scheme=plain]% thesis writing of international students
+%- [draftversion]% show draft version information
+%- [standard options for ctex article class: draft|paper size|font size|...]%
+%---------------------------------------------------------------------------%
+%->> Document settings
+%---------------------------------------------------------------------------%
+\usepackage[numbers,list,xhf]{Style/artratex}% document settings
+%- usage: \usepackage[option1,option2,...,optionN]{artratex}
+%- Multiple optional arguments:
+%- [bibtex|biber]% set bibliography processor and package
+%- [<numbers|super|authoryear|alpha>]% set citation and reference style
+%- <numbers>: textual: Jones [1]; parenthetical: [1]
+%- <super>: textual: Jones superscript [1]; parenthetical: superscript [1]
+%- <authoryear>: textual: Jones (1995); parenthetical: (Jones, 1995)
+%- <alpha>: textual: not available; parenthetical: [Jon95]
+%- [geometry]% reconfigure page layout via geometry package
+%- [lscape]% provide landscape layout environment
+%- [xhf]% disable header and footer via fancyhdr package
+%- [color]% provide color support via xcolor package
+%- [background]% enable page background
+%- [tikz]% provide complex diagrams via tikz package
+%- [table]% provide complex tables via ctable package
+%- [list]% provide enhanced list environments for algorithm and coding
+%- [math]% enable some extra math packages
+%- [xlink]% disable link colors
+\usepackage{Style/artracom}% user defined commands
+
+% 个人
+\usepackage{tabularx}
+\usepackage{array}
+
+
+%hjcadd
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{ctex}
+\usepackage{bbm}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{bigstrut}
+\usepackage{multirow}
+
+%---------------------------------------------------------------------------%
+%->> Document inclusion
+%---------------------------------------------------------------------------%
+%\includeonly{Tex/Chap_1,...,Tex/Chap_N}% selected files compilation
+%---------------------------------------------------------------------------%
+%->> Document content
+%---------------------------------------------------------------------------%
+%-
+%-> Titlepage information
+%-
+\input{Tex/Frontinfo}%
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\usepackage{color}
+
+\setcounter{tocdepth}{3}
+\usepackage{enumerate}
+% \usepackage{enumitem}
+\usepackage{bbm}
+
+\fancyhf{}
+\fancyhead[CO]{\footnotesize \leftmark}
+\fancyhead[CE]{\footnotesize \mytitle}
+% \cfoot{\footnotesize 第 \thepage 页 \hspace{1pt} 共 \pageref{LastPage} 页}
+% 设置奇数页（右侧）的页码位置
+\fancyfoot[RO]{\footnotesize \thepage} % 右侧页脚显示页码
+% 设置偶数页（左侧）的页码位置
+\fancyfoot[LE]{\footnotesize \thepage} % 左侧页脚显示页码
+
+% \renewcommand{\headrulewidth}{0pt} % 设置页眉下的横线宽度为0，即不显示
+\renewcommand{\footrulewidth}{0pt} % 设置页脚上的横线宽度为0，即不显示
+\begin{document}
+%-
+%-> Frontmatter: title page, abstract, content list, symbol list, preface
+%-
+\pagenumbering{roman}% page numbers with roman style
+\input{Tex/Frontmatter}% title page, abstract
+\thispagestyle{empty}
+
+%-
+%-> Mainmatter
+%-
+\clearpage
+\pagenumbering{arabic}% restart page numbers with arabic style
+\input{Tex/Mainmatter}% main content
+%-
+%-> Backmatter: bibliography, glossary, index
+%-
+\artxifstreq{\artxbib}{bibtex}{% enable bibtex
+    \bibliography{Biblio/ref}% bibliography
+}{%
+    \printbibliography% bibliography
+}
+\end{document}
+%---------------------------------------------------------------------------%
+
