@@ -34,6 +34,8 @@
 
 + `Tex/Mainmatter.tex` 中填写正文信息。
 
++ `Biblio/ref.bib` 中填写参考文献信息。
+
 ### 删除中英文摘要
 
 + 删除`Tex/Frontmatter.tex`中
