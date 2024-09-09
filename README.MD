@@ -1,6 +1,6 @@
 # 中国科学院大学研究生学位论文中期报告LaTex模板
 
-> 注意，这是本人根据当前的中期报告word模版和 [ucasproposal](https://github.com/mohuangrui/ucasproposal) 修改的LaTeX模板，不保证完全正确，如有错误请提issue。
+> 注意，这是本人根据当年的中期报告word模版和 [ucasproposal](https://github.com/mohuangrui/ucasproposal) 修改的LaTeX模板，不保证完全正确，如有错误请提issue。
 
 ## 更新
 + 2024.09.05 封面将第二导师信息合并到第一导师信息中
