@@ -29,6 +29,7 @@
 2. 返回overleaf的[项目主页](https://www.overleaf.com/project)，点击copy按钮，复制项目到自己的overleaf账号。
 
 ### 目录
++ `Thesis.tex` 编译用的主文件。
 
 + `Tex/Frontinfo.tex` 中填写封面信息。
 
