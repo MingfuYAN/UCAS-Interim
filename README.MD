@@ -3,6 +3,7 @@
 > 注意，这是本人根据当年的中期报告word模版和 [ucasproposal](https://github.com/mohuangrui/ucasproposal) 修改的LaTeX模板，不保证完全正确，如有错误请提issue。
 
 ## 更新
++ 2024.09.23 在封面后一页添加填表说明
 + 2024.09.05 封面将第二导师信息合并到第一导师信息中
 + 2023.10.13 封面添加第二导师相关信息
 + 2023.10.13 分章节撰写时每章另起一页
@@ -10,7 +11,6 @@
 + 2023.10.13 奇数页页眉为章节标题，偶数页页眉为论文题目
 + 2023.10.14 增加了中英文摘要 `Tex/Frontmatter.tex`
 + 2023.10.14 封面、摘要、目录后面都有一个空页，用于双面打印
-
 ## 未完成的工作
 + 封面字体和WORD模板字体有一点不同。
 + 目录格式和WORD模板的目录有一点不同。
@@ -21,7 +21,7 @@
 
 ### 方法1
 1. 下载本项目：右上角 Code -> Download ZIP。
-2. 上传到overleaf：打开[overleaf](https://www.overleaf.com/)上传zip文件。
+2. 上传到overleaf：打开[overleaf](https://www.overleaf.com/)上传zip文件。（或者用中国科学院下的中国科技云自己搭建的[overleaf](https://sharelatex.cstcloud.cn/)）
 3. 修改overleaf的编译器为XeLaTex：左上角Menu->Settings->Compiler。
 
 ### 方法2

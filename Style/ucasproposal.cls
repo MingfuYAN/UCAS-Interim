@@ -207,7 +207,7 @@
 %-> Redefine Chinese style
 %-
 \renewcommand{\maketitle}{%
-    \cleardoublepage
+    \clearpage  % 或者 \clearpage, 移除 \cleardoublepage 避免空白页
     \thispagestyle{empty}
     \begin{center}
         \linespread{1.3}
@@ -225,8 +225,6 @@
         \def\tabcolsep{1pt}
         \def\arraystretch{1.2}
         \begin{tabular}{lc}
-            %\ucas@label@ch@title & \ulenhance{\ulextend{\shortstack{\ucas@value@ch@title}}}\\
-            %\ucas@label@ch@title & \ulenhance{\ulextend{\specialcell[c]{b}{\ucas@value@ch@title}}}\\
             \ucas@label@ch@title & \ucaslntotab{\ucas@value@ch@title}\\
             \ucas@label@ch@author & \ulenhance{\ulextend[151pt]{\hspace*{-\ulhshift}\ucas@value@ch@author}}\ucas@label@ch@authorid\ulenhance{\ulextend[170pt]{\hspace*{-\ulhshift}\ucas@value@ch@authorid}}\\
             \ucas@label@ch@advisor & \ulenhance{\ulextend[151pt]{\hspace*{-\ulhshift}\ucas@value@ch@advisor}}\ucas@label@ch@advisortitle\ulenhance{\ulextend[170pt]{\hspace*{-\ulhshift}\ucas@value@ch@advisortitle}}\\
@@ -241,7 +239,7 @@
 
       {\ucas@label@ch@mark}
     \end{center}
-    \clearpage
+    \clearpage  % 或者 \clearpage，防止空白页
     \if@twoside
         \thispagestyle{empty}
         \ifucas@versioninfo
@@ -251,7 +249,7 @@
                 Draft Version (\today)
             \end{footnotesize}
         \fi
-        \cleardoublepage[empty]
+        % 注释掉 \cleardoublepage，防止生成空白页
     \else
         \ifucas@versioninfo
             \thispagestyle{empty}
@@ -260,7 +258,7 @@
                 \noindent
                 Draft Version (\today)
             \end{footnotesize}
-            \cleardoublepage[empty]
+            % 注释掉 \cleardoublepage，防止生成空白页
         \fi
     \fi
     \ifucas@print%
